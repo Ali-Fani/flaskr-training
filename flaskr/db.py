@@ -1,4 +1,5 @@
 import sqlite3
+import datetime
 
 import click
 from flask import current_app, g, Flask
@@ -34,6 +35,12 @@ def init_db_command():
     click.echo("Initialized the database.")
 
 
+
+
 def init_app(app: Flask):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+
+
+
+
